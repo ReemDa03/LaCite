@@ -183,9 +183,7 @@
 
 /* للشاشات الصغيرة (أقل من 601 بكسل - غالبًا الموبايل) */
 @media (max-width: 600px) {
-    .scroll-button-wrapper {
-        display: none; /* إخفاء زر السكرول */
-    }
+    
 
     .explore-products h1 {
         font-size: 24px; /* تصغير حجم العنوان h1 */
@@ -214,9 +212,7 @@
 
 /* للشاشات المتوسطة (من 601 بكسل إلى 768 بكسل - غالبًا التابلت) */
 @media (min-width: 601px) and (max-width: 768px) {
-    .scroll-button-wrapper {
-        display: none; /* إخفاء زر السكرول */
-    }
+    
 
     .explore-products h1 {
         font-size: 26px; /* تصغير طفيف لحجم العنوان h1 */
