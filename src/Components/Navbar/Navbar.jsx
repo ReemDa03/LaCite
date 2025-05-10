@@ -27,7 +27,7 @@ const Navbar = ({ setShowLogin, currentUser, setCurrentUser }) => {
         </div>
       <ul className="navbar-menu">
         <Link
-          to="/"
+          to="/#"
           onClick={() => setMenu("home")}
           className={menu === "home" ? "active" : ""}
         >
@@ -59,7 +59,7 @@ const Navbar = ({ setShowLogin, currentUser, setCurrentUser }) => {
       <div className="navbar-right">
         <img className="search" src={assets.search_icon} alt="Search Icon" />
         <div className="navbar-search-icon">
-          <Link to="/cart">
+          <Link to="/#cart">
             <img src={assets.basket_icon} alt="Cart" />
           </Link>
           <div className="dot"></div>

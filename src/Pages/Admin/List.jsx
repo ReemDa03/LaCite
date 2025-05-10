@@ -82,7 +82,7 @@ const List = () => {
   return (
     <div className="list" id="list">
       <div className="list add flex-col">
-        <p className="to-add">You Wanna Add a New Product? <span onClick={() => navigate('/add')}>Click Here</span></p>
+        <p className="to-add">You Wanna Add a New Product? <span onClick={() => navigate('/#add')}>Click Here</span></p>
         <p className="titlee">All Products</p>
         <div className="list-table">
           <div className="list-table-format title">

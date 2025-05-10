@@ -23,7 +23,7 @@ const AdminRoute = ({ children }) => {
 
   if (checking) return <p>Loading...</p>; // أو حطي لودر
 
-  return authorized ? children : <Navigate to="/" />;
+  return authorized ? children : <Navigate to="/#" />;
 };
 
 export default AdminRoute;

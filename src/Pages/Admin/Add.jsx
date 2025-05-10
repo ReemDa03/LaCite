@@ -169,7 +169,7 @@ const Add = ({ currentUser }) => {
       <form className="flex-col">
         <p className="to-list">
           You Wanna See All Products?{" "}
-          <span onClick={() => navigate("/list")}>Click Here</span>
+          <span onClick={() => navigate("/#list")}>Click Here</span>
         </p>
 
         {/* رفع صورة رئيسية */}
