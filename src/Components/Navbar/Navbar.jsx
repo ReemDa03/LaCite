@@ -32,21 +32,21 @@ const Navbar = ({ setShowLogin, currentUser, setCurrentUser }) => {
           Home
         </Link>
         <Link
-          to="/#explore-products"
+          to="#explore-products"
           onClick={() => setMenu("products")}
           className={menu === "products" ? "active" : ""}
         >
           Products
         </Link>
         <Link // استخدم <a> للانتقال إلى قسم تذييل الصفحة
-          to="/#footer"
+          to="#footer"
           onClick={() => setMenu("contact")}
           className={menu === "contact" ? "active" : ""}
         >
           About LaCitè
         </Link>
         <Link // استخدم <a> للانتقال إلى قسم تذييل الصفحة
-          to="/#footer"
+          to="#footer"
           onClick={() => setMenu("about")}
           className={menu === "about" ? "active" : ""}
         >
