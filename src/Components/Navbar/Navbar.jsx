@@ -18,6 +18,14 @@ const Navbar = ({ setShowLogin, currentUser, setCurrentUser }) => {
     }
   };
 
+  const handleScrollToProducts = () => {
+    navigate("/"); // أول شي نرجع للهوم
+    setTimeout(() => {
+      const section = document.getElementById("explore-products");
+      section?.scrollIntoView({ behavior: "smooth" });
+    }, 100); // ننتظر شوي ليتحمّل الهوم
+  };
+
   return (
     <div className="navbar">
       <div className="logo" onClick={handleLogoClick}>
@@ -32,8 +40,7 @@ const Navbar = ({ setShowLogin, currentUser, setCurrentUser }) => {
           Home
         </Link>
         <Link
-          to="#explore-products"
-          onClick={() => setMenu("products")}
+          onClick={handleScrollToProducts}
           className={menu === "products" ? "active" : ""}
         >
           Products
