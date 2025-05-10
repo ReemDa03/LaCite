@@ -2,10 +2,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './UserMenu.css';
 import { toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom";
 
 const UserMenu = ({ setCurrentUser }) => {
   const [showMenu, setShowMenu] = useState(false);
   const menuRef = useRef(null);
+  const navigate = useNavigate();
+
 
   const user = JSON.parse(localStorage.getItem("user"));
 
@@ -21,7 +24,8 @@ const UserMenu = ({ setCurrentUser }) => {
               setCurrentUser(null);
               toast.success("Logged out successfully!");
               closeToast();
-              window.location.reload();
+              navigate("/#");
+
             }}
           >
             Yes

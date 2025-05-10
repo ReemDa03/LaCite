@@ -12,9 +12,9 @@ const Navbar = ({ setShowLogin, currentUser, setCurrentUser }) => {
 
   const handleLogoClick = () => {
     if (currentUser?.role === "admin") {
-      navigate("/add");
+      navigate("/#add");
     } else {
-      navigate("/");
+      navigate("/#");
     }
   };
   

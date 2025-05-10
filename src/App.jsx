@@ -12,14 +12,10 @@ import Cart from "./Pages/Cart/Cart";
 import AboutLa from "./Components/AboutLa/AboutLa";
 import Footer from "./Components/Footer/Footer";
 
-import { CartProvider } from "./Context/CartContext";
-
-// ✅ صفحات الأدمن
-
-
-import AdminRoute from './Components/AdminRoute/AdminRoute';
+import AdminRoute from "./Components/AdminRoute/AdminRoute";
 import Add from "./Pages/Admin/Add";
 import List from "./Pages/Admin/List";
+
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
@@ -34,65 +30,62 @@ const App = () => {
 
   return (
     <div className="app">
-      <CartProvider>
-        {showLogin && (
-          <LoginSignin
-            setShowLogin={setShowLogin}
-            setCurrentUser={setCurrentUser}
-          />
-        )}
-
-        <Navbar
+      {showLogin && (
+        <LoginSignin
           setShowLogin={setShowLogin}
-          currentUser={currentUser}
           setCurrentUser={setCurrentUser}
         />
+      )}
 
-        <Routes>
-          {/* الصفحة الرئيسية */}
-          <Route
-            path="/#"
-            element={
-              <>
-                <Header />
-                <ExploreProducts />
-              </>
-            }
-          />
+      <Navbar
+        setShowLogin={setShowLogin}
+        currentUser={currentUser}
+        setCurrentUser={setCurrentUser}
+      />
 
-          {/* صفحات المستخدم */}
-          <Route path="/#product/:id" element={<ProductDetails />} />
-          <Route path="/#cart" element={<Cart />} />
+      <Routes>
+        {/* الصفحة الرئيسية */}
+        <Route
+          path="/"
+          element={
+            <>
+              <Header />
+              <ExploreProducts />
+            </>
+          }
+        />
 
-          {/* ✅ صفحات الأدمن */}
+        {/* صفحات المستخدم */}
+        <Route path="/#product/:id" element={<ProductDetails />} />
+        <Route path="/#cart" element={<Cart />} />
 
-          <Route
-            path="/#add"
-            element={
-              <AdminRoute>
-                <Add/>
-              </AdminRoute>
-            }
-          />
-          <Route
-            path="/#list"
-            element={
-              <AdminRoute>
-                <List/>
-              </AdminRoute>
-            }
-          />
-        </Routes>
+        {/* صفحات الأدمن */}
+        <Route
+          path="/#add"
+          element={
+            <AdminRoute>
+              <Add />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/#list"
+          element={
+            <AdminRoute>
+              <List />
+            </AdminRoute>
+          }
+        />
+      </Routes>
 
-        <Footer onSelectSection={setSelectedSection} />
+      <Footer onSelectSection={setSelectedSection} />
 
-        {selectedSection && (
-          <AboutLa
-            sectionTitle={selectedSection}
-            onClose={() => setSelectedSection(null)}
-          />
-        )}
-      </CartProvider>
+      {selectedSection && (
+        <AboutLa
+          sectionTitle={selectedSection}
+          onClose={() => setSelectedSection(null)}
+        />
+      )}
 
       <ToastContainer position="top-center" autoClose={2000} />
     </div>

@@ -9,6 +9,8 @@ import {
 import { doc, setDoc, getDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+
 
 const LoginSignin = ({ setShowLogin, setCurrentUser }) => {
   const [currentState, setCurrentState] = useState("Sign Up");
@@ -17,6 +19,8 @@ const LoginSignin = ({ setShowLogin, setCurrentUser }) => {
   const [name, setName] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [passwordError, setPasswordError] = useState(""); // State لتعقب خطأ كلمة المرور
+  const navigate = useNavigate();
+
 
   const handleAuth = async (e) => {
     e.preventDefault();
@@ -42,7 +46,8 @@ const LoginSignin = ({ setShowLogin, setCurrentUser }) => {
 
         toast.success("Account created successfully!");
         setShowLogin(false);
-        setTimeout(() => window.location.reload(), 1000);
+        navigate("/#");
+
         setPasswordError(""); // Reset error on successful signup
       } else {
         const userCredential = await signInWithEmailAndPassword(
