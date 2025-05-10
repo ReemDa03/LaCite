@@ -33,21 +33,21 @@ const Navbar = ({ setShowLogin, currentUser, setCurrentUser }) => {
         >
           Home
         </Link>
-        <a
+        <a // استخدم <a> للانتقال إلى قسم المنتجات في الصفحة الرئيسية
           href="#explore-products"
           onClick={() => setMenu("products")}
           className={menu === "products" ? "active" : ""}
         >
           Products
         </a>
-        <a
+        <a // استخدم <a> للانتقال إلى قسم تذييل الصفحة
           href="#footer"
           onClick={() => setMenu("contact")}
           className={menu === "contact" ? "active" : ""}
         >
           About LaCitè
         </a>
-        <a
+        <a // استخدم <a> للانتقال إلى قسم تذييل الصفحة
           href="#footer"
           onClick={() => setMenu("about")}
           className={menu === "about" ? "active" : ""}
