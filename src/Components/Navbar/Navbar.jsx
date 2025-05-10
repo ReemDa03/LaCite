@@ -17,14 +17,12 @@ const Navbar = ({ setShowLogin, currentUser, setCurrentUser }) => {
       navigate("/");
     }
   };
-  
 
-  
-    return (
-      <div className="navbar">
-        <div className="logo" onClick={handleLogoClick}>
-          <h1>LaCitè</h1>
-        </div>
+  return (
+    <div className="navbar">
+      <div className="logo" onClick={handleLogoClick}>
+        <h1>LaCitè</h1>
+      </div>
       <ul className="navbar-menu">
         <Link
           to="/"
@@ -33,27 +31,27 @@ const Navbar = ({ setShowLogin, currentUser, setCurrentUser }) => {
         >
           Home
         </Link>
-        <a // استخدم <a> للانتقال إلى قسم المنتجات في الصفحة الرئيسية
-          href="#explore-products"
+        <Link
+          to="/#explore-products"
           onClick={() => setMenu("products")}
           className={menu === "products" ? "active" : ""}
         >
           Products
-        </a>
-        <a // استخدم <a> للانتقال إلى قسم تذييل الصفحة
-          href="#footer"
+        </Link>
+        <Link // استخدم <a> للانتقال إلى قسم تذييل الصفحة
+          to="/#footer"
           onClick={() => setMenu("contact")}
           className={menu === "contact" ? "active" : ""}
         >
           About LaCitè
-        </a>
-        <a // استخدم <a> للانتقال إلى قسم تذييل الصفحة
-          href="#footer"
+        </Link>
+        <Link // استخدم <a> للانتقال إلى قسم تذييل الصفحة
+          to="/#footer"
           onClick={() => setMenu("about")}
           className={menu === "about" ? "active" : ""}
         >
           Contact Us
-        </a>
+        </Link>
       </ul>
 
       <div className="navbar-right">
@@ -68,7 +66,9 @@ const Navbar = ({ setShowLogin, currentUser, setCurrentUser }) => {
         {currentUser ? (
           <UserMenu setCurrentUser={setCurrentUser} />
         ) : (
-          <button className="ptn" onClick={() => setShowLogin(true)}>Login</button>
+          <button className="ptn" onClick={() => setShowLogin(true)}>
+            Login
+          </button>
         )}
       </div>
     </div>

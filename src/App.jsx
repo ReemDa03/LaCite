@@ -2,6 +2,24 @@ import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
+function ScrollToHashElement() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
+  return null;
+}
+
 
 import Navbar from "./Components/Navbar/Navbar";
 import Header from "./Components/Header/Header";
@@ -87,6 +105,7 @@ const App = () => {
       )}
 
       <ToastContainer position="top-center" autoClose={2000} />
+      <ScrollToHashElement />
     </div>
   );
 };
