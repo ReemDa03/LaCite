@@ -1,0 +1,37 @@
+.product-card {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 200px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
+}
+
+.clickable-area {
+  cursor: pointer;
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 10px;
+  display: flex;
+  flex-direction: column; /* ترتيب العناصر عموديًا */
+  align-items: flex-start; /* محاذاة العناصر إلى اليسار */
+  gap: 5px; /* مساحة بين الاسم والسعر */
+}
+
+.product-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333; /* لون داكن للاسم */
+}
+
+.product-price {
+  font-size: 14px;
+  color: #666; /* لون للسعر (يمكنك تغييره حسب الرغبة) */
+  font-weight: 600; /* جعل السعر سميكًا */
+}

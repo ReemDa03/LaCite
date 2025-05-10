@@ -1,0 +1,262 @@
+/* Cart Wrapper */
+.cart {
+  margin-top: 40px;
+  padding: 40px 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Items Title Header (Optional section title styling) */
+.cart-items-title {
+  display: grid;
+}
+
+/* Items Container (Scroll horizontally on small screens) */
+.cart-items {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Table Header Grid */
+.cart-items-header {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 0;
+  border-bottom: 2px solid #ddd;
+}
+
+.cart-items-header p {
+  text-align: center;
+}
+
+/* Bottom Section: Total and Button */
+.cart-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+/* Total Summary Box */
+.cart-total {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  align-self: flex-end;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-total h2 {
+  margin-bottom: 20px;
+}
+
+  .list-table-format{
+    display: grid;
+    grid-template-columns: 0.7fr 2fr 1.2fr 1fr 1fr 1fr 1fr 0.5fr; /* ✅ تعديل للأعمدة */
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    border: 1px solid #acacac;
+    font-size: 13px;
+    text-align: center;
+  }
+  .list-table-format.title {
+    background-color: #f9f9f9;
+    grid-template-columns: 0.7fr 2fr 1.2fr 1fr 1fr 1fr 1fr 0.5fr;
+    font-weight: bold;
+    
+    text-align: center;
+}
+
+.list-table-format img {
+  width: 50px;
+  height: 50px;
+  
+  border-radius: 8px;
+}
+  .cart-total-details {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    align-items: center;
+  }
+
+  /* الرسالة الخاصة بالسلة الفارغة */
+.empty-cart-message {
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+  
+  .cart-total-details.total {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .list-table-format .click{
+    cursor: pointer;
+    color: black;
+    font-size: 18px;
+  }
+  
+  /* Checkout Button */
+  .checkout-btn {
+    padding: 15px 20px;
+    background-color: #444;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    max-width: 300px;
+    align-self: flex-end;
+    transition: background-color 0.3s ease;
+  }
+  
+  .checkout-btn:hover {
+    background-color: #444;
+  }
+  
+/* -------------------- MEDIA QUERIES لسلة التسوق (690 بكسل وأقل) - مُعدل -------------------- */
+
+@media (max-width: 690px) {
+    .cart {
+        padding: 20px 3%;
+        gap: 20px;
+    }
+
+    .cart-items-header {
+        display: none; /* إخفاء رأس الجدول */
+    }
+
+    .cart-items {
+        overflow-x: initial; /* السماح بالتمرير العمودي فقط */
+    }
+
+    .list-table-format {
+        display: flex; /* استخدام فليكس لتنظيم العناصر أفقياً */
+        flex-wrap: wrap; /* السماح للعناصر بالالتفاف لو محتاجة */
+        border: 1px solid #acacac;
+        margin-bottom: 15px;
+        padding: 15px;
+        text-align: left;
+        align-items: center; /* محاذاة العناصر عمودياً في المنتصف */
+    }
+
+    .list-table-format.title {
+        display: none; /* إخفاء عنوان الجدول المكرر */
+    }
+
+    .list-table-format > div {
+        display: block; /* عرض العناصر الداخلية كبلوك عشان نرتبهم تحت بعض لو لزم الأمر */
+        width: 100%; /* جعل العناصر الداخلية تأخذ عرض كامل */
+        margin-bottom: 8px;
+    }
+
+    .list-table-format > div:last-child {
+        margin-bottom: 0;
+        border-top: 1px solid #eee;
+        padding-top: 10px;
+    }
+
+    .list-table-format .remove-item {
+        order: -1; /* وضع أيقونة الإزالة في البداية على اليسار */
+        margin-right: 15px;
+        font-size: 20px;
+        color: black;
+        cursor: pointer;
+    }
+
+    .list-table-format img {
+        width: 80px;
+        height: 80px;
+        border-radius: 8px;
+        margin-right: 15px;
+    }
+
+    .item-details {
+        flex-grow: 1; /* السماح لتفاصيل المنتج بأخذ المساحة المتبقية */
+    }
+
+    .item-details .product-name {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .item-details .size-quantity {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 5px;
+        font-size: 14px;
+        color: #666;
+    }
+
+    .item-details .price {
+        font-weight: bold;
+        color: #888;
+        font-size: 14px;
+    }
+
+    .cart-bottom {
+        align-items: center;
+    }
+
+    .cart-total {
+        max-width: 100%;
+        align-self: center;
+        margin-bottom: 20px;
+    }
+
+    .cart-total h2 {
+        text-align: center;
+    }
+
+    .checkout-btn {
+        max-width: 100%;
+        align-self: center;
+        padding: 12px 15px;
+        font-size: 16px;
+    }
+
+    .empty-cart-message {
+        font-size: 14px;
+        padding: 15px;
+    }
+}
+
+/* تعديلات بسيطة للشاشات الأقل من 400 بكسل */
+@media (max-width: 400px) {
+    .list-table-format img {
+        width: 60px;
+        height: 60px;
+        margin-right: 10px;
+    }
+
+    .item-details .product-name {
+        font-size: 14px;
+    }
+
+    .item-details .size-quantity,
+    .item-details .price {
+        font-size: 12px;
+    }
+
+    .list-table-format {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .list-table-format .remove-item {
+        font-size: 18px;
+        margin-right: 10px;
+    }
+}

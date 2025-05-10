@@ -1,0 +1,142 @@
+.navbar{
+    padding: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar .logo{
+    width: 150px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #000;
+}
+.navbar-menu{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    color: #666;
+    font-size: 18px;
+}
+.navbar-right{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.navbar button {
+    background: transparent;
+    font-size: 18px;
+    color: #666;
+    border: 1px solid #444;
+    padding: 10px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.navbar button:hover{
+    background-color: #f8f8f8;
+}
+.navbar button:hover:not(:disabled) {
+    background-color: #f8f8f8;
+}
+
+.navbar .active{
+    padding-bottom: 2px;
+    border-bottom: 2px solid #666;
+}
+.navbar li{
+    cursor: pointer;
+}
+.navbar-search-icon{
+    position: relative;
+}
+.navbar-search-icon .dot{
+    position: absolute;
+    min-width: 10px;
+    min-height: 10px;
+    background-color:tomato;
+    border-radius: 5px;
+    top: -8px;
+    right: -8px;
+}
+.navbar-right .search{
+    display: none;
+}
+
+.navbar-right button{
+    margin-bottom: 17px;
+}
+
+/* -------------------- MEDIA QUERIES -------------------- */
+
+/* للشاشات الصغيرة (أقل من 768 بكسل - غالبًا الموبايل والتابلت) */
+
+/* للشاشات المتوسطة (من 769 بكسل إلى 992 بكسل - غالبًا التابلت الأكبر) */
+/* للشاشات الصغيرة (أقل من 768 بكسل - غالبًا الموبايل والتابلت) */
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none; /* إخفاء قائمة المنيو */
+    }
+
+    .navbar-right {
+        gap: 20px; /* تقليل المسافة أكثر في الشاشات الصغيرة جدًا */
+    }
+
+    .navbar .logo {
+        width: 80px; /* تصغير اللوجو بشكل أكبر */
+    }
+
+    .navbar button {
+        font-size: 14px; /* تصغير حجم الخط أكثر في الشاشات الصغيرة جدًا */
+        padding: 6px 15px; /* تقليل البادينج أكثر في الشاشات الصغيرة جدًا */
+        margin-bottom: 10px;
+    }
+
+    .navbar-search-icon {
+        /* ممكن نصغر الأبعاد لو كانت الأيقونة نفسها كبيرة */
+        width: 25px; /* مثال: تصغير عرض الأيقونة */
+        height: 25px; /* مثال: تصغير ارتفاع الأيقونة */
+    }
+
+    .navbar-search-icon .dot {
+        min-width: 6px; /* تصغير حجم النقطة أكثر */
+        min-height: 6px; /* تصغير حجم النقطة أكثر */
+        top: -5px; /* تعديل موضع النقطة بشكل متناسب */
+        right: -5px; /* تعديل موضع النقطة بشكل متناسب */
+        border-radius: 3px; /* تصغير دائرة النقطة بشكل متناسب */
+    }
+
+    /* ممكن نضيف هنا زر أو أيقونة للمنيو تظهر بدلاً من القائمة المخفية */
+    /* مثال لأيقونة (تحتاج لإضافة HTML لها): */
+    /* .navbar .menu-toggle {
+    /* display: block;
+    /* font-size: 24px;
+    /* cursor: pointer;
+    /* }
+    */
+}
+/* للشاشات الكبيرة (أكبر من 992 بكسل - غالبًا أجهزة الكمبيوتر) */
+/* هنا هنرجع القيم الأصلية اللي كانت موجودة أو ممكن نعدل بشكل طفيف لو احتاج الأمر */
+@media (min-width: 993px) {
+    .navbar {
+        padding: 20px 0px; /* الرجوع للهوامش الأصلية */
+    }
+
+    .navbar .logo {
+        width: 150px; /* الرجوع لحجم اللوجو الأصلي */
+    }
+
+    .navbar-menu {
+        display: flex; /* التأكد من ظهور القائمة */
+        gap: 20px; /* الرجوع للمسافة الأصلية بين عناصر القائمة */
+        font-size: 18px; /* الرجوع لحجم الخط الأصلي للقائمة */
+    }
+
+    .navbar-right {
+        gap: 40px; /* الرجوع للمسافة الأصلية بين العناصر على اليمين */
+    }
+
+    .navbar button {
+        font-size: 18px; /* الرجوع لحجم الخط الأصلي للأزرار */
+        padding: 10px 30px; /* الرجوع لحجم البادينج الأصلي للأزرار */
+    }
+}

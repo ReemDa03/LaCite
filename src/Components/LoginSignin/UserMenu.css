@@ -1,0 +1,64 @@
+/* src/components/LoginSignin/UserMenu.css */
+.user-menu {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  
+    
+    
+  }
+  
+ 
+  
+  
+    .dropdown {
+      position: absolute;
+      top: 100%; /* خليها تطلع تحت الزر تمامًا */
+      right: 0;
+      margin-top: 8px; /* مسافة صغيرة */
+      background-color: white;
+      border: 1px solid #ddd;
+      padding: 12px;
+      min-width: 200px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      z-index: 100;
+      border-radius: 8px;
+      text-align: left; /* يتأكد أن الكلام يجي بشكل مرتب */
+    }
+    
+  
+  
+  .dropdown p {
+    margin: 5px 0;
+  }
+  
+  .dropdown button {
+    margin-top: 10px;
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .dropdown button:hover {
+    background-color: #d9363e;
+  }
+  

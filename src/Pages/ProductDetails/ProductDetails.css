@@ -1,0 +1,321 @@
+.product-details-container {
+  padding: 20px;
+  position: relative;
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  
+  color: #333;
+  
+}
+
+.details-layout {
+  display: flex;
+  gap: 40px;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.left-section {
+  flex: 0.7;
+  margin-top: 25px;
+}
+
+.right-section {
+  flex: 1.3;
+  margin-top: 25px;
+}
+
+.main-image {
+  width: 80%;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+}
+
+.gallery-scroll {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+
+  width: 80%;              /* ← نفس عرض الماين إيميج */
+  margin: 10px auto;          /* ← حتى تكون بمحاذاة الماين إيميج */
+
+  overflow-x: auto;        /* ← يظهر سكرول لو الصور كتيرة */
+  padding-bottom: 10px;
+  scroll-behavior: smooth; /* حركة سحب ناعمة */
+}
+
+
+.gallery-image {
+  width: 10%;
+  min-width: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.price {
+  color: #888;
+  margin-top: 10px;
+}
+
+.options p {
+  margin-top: 20px;
+}
+
+.choices {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.choice-button {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  cursor: pointer;
+  border-radius: 6px;
+  color: #333;
+  transition: transform 0.2s ease;
+}
+
+.choice-button:hover {
+  transform: translateY(-2px);
+  color: #ddd;
+}
+
+.choice-button.selected {
+  border: 2px solid #666;
+  font-weight: bold;
+  color: #222;
+}
+
+.details-title {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.description {
+  margin-top: 10px;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.quantity-control button {
+  background: #666;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.quantity-control span {
+  font-size: 16px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.add-to-cart,
+.buy-now {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: #666;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.add-to-cart:hover,
+.buy-now:hover {
+  background: #444;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  position: relative;
+  justify-content: center;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: black;
+  font-size: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+
+.choice-button:hover:not(:disabled) {
+     background-color: #ddd; 
+    transform: translateY(-2px);
+    color: #222;
+}
+.back-button:hover:not(:disabled){
+  background-color: #ddd;
+  transform: translateY(-2px);
+  color: black;
+  
+}
+
+
+/* -------------------- MEDIA QUERIES لصفحة تفاصيل المنتج -------------------- */
+
+/* للشاشات الصغيرة (أقل من 768 بكسل - غالبًا الموبايل والتابلت) */
+/* للشاشات الصغيرة (أقل من 768 بكسل - غالبًا الموبايل والتابلت) */
+@media (max-width: 630px) {
+    .details-layout {
+        flex-direction: column; /* جعل الأقسام عمودية */
+        gap: 20px; /* تقليل المسافة بين الأقسام */
+        align-items: flex-start; /* محاذاة العناصر من بداية المحور الفرعي (اليسار في حالة flex-direction: column) */
+    }
+
+    .left-section,
+    .right-section {
+        flex: 1; /* جعل الأقسام تأخذ عرض كامل */
+        margin-top: 10px; /* تقليل الهامش العلوي */
+    }
+
+    .main-image {
+        width: 68%; /* جعل الصورة الرئيسية تأخذ عرض معقول */
+    }
+
+    .gallery-scroll {
+        width: 69%; /* جعل معرض الصور يأخذ عرض معقول */
+    }
+
+    .gallery-image {
+        width: 20%; /* زيادة عرض صور المعرض في الشاشات الصغيرة */
+        min-width: 40px; /* تقليل الحد الأدنى لعرض صور المعرض */
+    }
+
+    .title {
+        font-size: 21px; /* تصغير حجم العنوان */
+        text-align: left; /* محاذاة العنوان لليسار */
+        margin-bottom: -9px;
+    }
+
+    .price {
+        font-size: 16px; /* تصغير حجم السعر */
+    }
+
+    .options p,
+    .details-title,
+    .description,
+    .quantity-control span,
+    .action-buttons button {
+        font-size: 14px; /* تصغير حجم النصوص الأخرى */
+        text-align: left; /* محاذاة النصوص لليسار */
+    }
+
+    .choices {
+        flex-wrap: wrap; /* السماح للأزرار بالالتفاف في حال كانت كثيرة */
+    }
+
+    .choice-button {
+        padding: 4px 8px; /* تقليل حجم أزرار الاختيارات */
+        font-size: 12px; /* تصغير حجم خط أزرار الاختيارات */
+        margin-bottom: 5px; /* إضافة هامش سفلي بسيط لأزرار الاختيارات عند الالتفاف */
+    }
+
+    .quantity-control {
+        justify-content: flex-start; /* محاذاة عناصر التحكم في الكمية لليسار */
+    }
+
+    .quantity-control button {
+        padding: 4px 8px; /* تقليل حجم أزرار التحكم في الكمية */
+        font-size: 14px; /* تصغير حجم خط أزرار التحكم في الكمية */
+    }
+
+    .action-buttons {
+        flex-direction: column; /* جعل أزرار الإجراء عمودية */
+        gap: 10px; /* تقليل المسافة بين أزرار الإجراء */
+    }
+
+    .add-to-cart,
+    .buy-now {
+        font-size: 14px; /* تصغير حجم خط أزرار الإجراء */
+        padding: 8px; /* تقليل حجم بادينج أزرار الإجراء */
+        text-align: center; /* توسيط النص داخل أزرار الإجراء */
+    }
+
+    .back-button {
+        font-size: 20px; /* تصغير حجم زر الرجوع */
+        margin-bottom: 7px;
+    }
+}
+/* للشاشات المتوسطة (من 769 بكسل إلى 992 بكسل - غالبًا التابلت الأكبر) */
+@media (min-width: 630px) and (max-width: 992px) {
+    .title {
+        font-size: 26px; /* تصغير طفيف لحجم العنوان */
+    }
+
+    .price {
+        font-size: 18px; /* تصغير طفيف لحجم السعر */
+    }
+
+    .options p,
+    .details-title,
+    .description,
+    .quantity-control span,
+    .action-buttons button {
+        font-size: 15px; /* تصغير طفيف لحجم النصوص الأخرى */
+    }
+
+    .main-image {
+        width: 95%; /* زيادة طفيفة لعرض الصورة الرئيسية */
+    }
+
+    .gallery-scroll {
+        width: 95%; /* زيادة طفيفة لعرض معرض الصور */
+    }
+    
+}
+
+/* للشاشات الكبيرة (أكبر من 992 بكسل) - هنا ممكن نرجع للقيم الأصلية أو نعمل تعديلات بسيطة لو احتاج الأمر */
+@media (min-width: 993px) {
+    .title {
+        font-size: 28px;
+    }
+
+    .price {
+        font-size: 20px;
+    }
+
+    .options p,
+    .details-title,
+    .description,
+    .quantity-control span,
+    .action-buttons button {
+        font-size: 16px;
+    }
+
+    .main-image {
+        width: 80%;
+    }
+
+    .gallery-scroll {
+        width: 80%;
+    }
+}
