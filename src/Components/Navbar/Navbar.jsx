@@ -33,27 +33,27 @@ const Navbar = ({ setShowLogin, currentUser, setCurrentUser }) => {
         >
           Home
         </Link>
-        <Link
+        <a
           href="#explore-products"
           onClick={() => setMenu("products")}
           className={menu === "products" ? "active" : ""}
         >
           Products
-        </Link>
-        <Link
+        </a>
+        <a
           href="#footer"
           onClick={() => setMenu("contact")}
           className={menu === "contact" ? "active" : ""}
         >
           About LaCitè
-        </Link>
-        <Link
+        </a>
+        <a
           href="#footer"
           onClick={() => setMenu("about")}
           className={menu === "about" ? "active" : ""}
         >
           Contact Us
-        </Link>
+        </a>
       </ul>
 
       <div className="navbar-right">
