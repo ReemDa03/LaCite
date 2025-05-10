@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import { assets } from "../../assets/assets";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import UserMenu from "../LoginSignin/UserMenu";
-import { useNavigate } from "react-router-dom";
-//import { adminUID } from "../../Pages/Admin/Add";
 
 const Navbar = ({ setShowLogin, currentUser, setCurrentUser }) => {
   const [menu, setMenu] = useState("");
@@ -17,14 +15,13 @@ const Navbar = ({ setShowLogin, currentUser, setCurrentUser }) => {
       navigate("/");
     }
   };
-  
 
-  
-    return (
-      <div className="navbar">
-        <div className="logo" onClick={handleLogoClick}>
-          <h1>LaCitè</h1>
-        </div>
+  return (
+    <div className="navbar">
+      <div className="logo" onClick={handleLogoClick}>
+        <h1>LaCitè</h1>
+      </div>
+
       <ul className="navbar-menu">
         <Link
           to="/"
@@ -33,27 +30,27 @@ const Navbar = ({ setShowLogin, currentUser, setCurrentUser }) => {
         >
           Home
         </Link>
-        <a
-          href="#explore-products"
+        <Link
+          to="/#explore-products"
           onClick={() => setMenu("products")}
           className={menu === "products" ? "active" : ""}
         >
           Products
-        </a>
-        <a
-          href="#footer"
+        </Link>
+        <Link
+          to="/#footer"
           onClick={() => setMenu("contact")}
           className={menu === "contact" ? "active" : ""}
         >
           About LaCitè
-        </a>
-        <a
-          href="#footer"
+        </Link>
+        <Link
+          to="/#footer"
           onClick={() => setMenu("about")}
           className={menu === "about" ? "active" : ""}
         >
           Contact Us
-        </a>
+        </Link>
       </ul>
 
       <div className="navbar-right">
@@ -68,7 +65,9 @@ const Navbar = ({ setShowLogin, currentUser, setCurrentUser }) => {
         {currentUser ? (
           <UserMenu setCurrentUser={setCurrentUser} />
         ) : (
-          <button className="ptn" onClick={() => setShowLogin(true)}>Login</button>
+          <button className="ptn" onClick={() => setShowLogin(true)}>
+            Login
+          </button>
         )}
       </div>
     </div>
