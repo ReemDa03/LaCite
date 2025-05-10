@@ -46,7 +46,7 @@ const App = () => {
       <Routes>
         {/* الصفحة الرئيسية */}
         <Route
-          path="/#"
+          path="/"
           element={
             <>
               <Header />
@@ -56,12 +56,12 @@ const App = () => {
         />
 
         {/* صفحات المستخدم */}
-        <Route path="/#product/:id" element={<ProductDetails />} />
-        <Route path="/#cart" element={<Cart />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/cart" element={<Cart />} />
 
         {/* صفحات الأدمن */}
         <Route
-          path="/#add"
+          path="/add"
           element={
             <AdminRoute>
               <Add />
@@ -69,7 +69,7 @@ const App = () => {
           }
         />
         <Route
-          path="/#list"
+          path="/list"
           element={
             <AdminRoute>
               <List />

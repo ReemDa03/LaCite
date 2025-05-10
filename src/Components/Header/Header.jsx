@@ -8,7 +8,7 @@ const Header = () => {
       <div className="header-contents">
         <h2>Unlock the trends. Shop now!</h2>
         <p>Discover abayas, shoes, and jewelry crafted for elegance. Your go-to fashion hub for timeless style and grace.</p>
-        <Link to='/#explore-product'><button className='hide'>View Products</button></Link>
+        <Link to='/explore-product'><button className='hide'>View Products</button></Link>
       </div>
     </div>
   )
