@@ -11,7 +11,6 @@ import ProductDetails from "./Pages/ProductDetails/ProductDetails";
 import Cart from "./Pages/Cart/Cart";
 import AboutLa from "./Components/AboutLa/AboutLa";
 import Footer from "./Components/Footer/Footer";
-
 import AdminRoute from "./Components/AdminRoute/AdminRoute";
 import Add from "./Pages/Admin/Add";
 import List from "./Pages/Admin/List";
