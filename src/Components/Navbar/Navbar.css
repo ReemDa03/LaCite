@@ -5,7 +5,7 @@
     align-items: center;
 }
 .navbar .logo{
-    width: 150px;
+    width: 130px;
     font-weight: 500;
     cursor: pointer;
     color: #000;
@@ -122,7 +122,7 @@
     }
 
     .navbar .logo {
-        width: 150px; /* الرجوع لحجم اللوجو الأصلي */
+        width: 120px; /* الرجوع لحجم اللوجو الأصلي */
     }
 
     .navbar-menu {
