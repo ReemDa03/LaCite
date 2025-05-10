@@ -34,21 +34,21 @@ const Navbar = ({ setShowLogin, currentUser, setCurrentUser }) => {
           Home
         </Link>
         <a
-          href="/#explore-products"
+          href="#explore-products"
           onClick={() => setMenu("products")}
           className={menu === "products" ? "active" : ""}
         >
           Products
         </a>
         <a
-          href="/#footer"
+          href="#footer"
           onClick={() => setMenu("contact")}
           className={menu === "contact" ? "active" : ""}
         >
           About LaCitè
         </a>
         <a
-          href="/#footer"
+          href="#footer"
           onClick={() => setMenu("about")}
           className={menu === "about" ? "active" : ""}
         >
