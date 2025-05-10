@@ -46,7 +46,7 @@ const LoginSignin = ({ setShowLogin, setCurrentUser }) => {
 
         toast.success("Account created successfully!");
         setShowLogin(false);
-        navigate("/#");
+        navigate("/");
 
         setPasswordError(""); // Reset error on successful signup
       } else {

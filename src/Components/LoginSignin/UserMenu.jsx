@@ -24,7 +24,7 @@ const UserMenu = ({ setCurrentUser }) => {
               setCurrentUser(null);
               toast.success("Logged out successfully!");
               closeToast();
-              navigate("/#");
+              navigate("/");
 
             }}
           >

@@ -46,7 +46,7 @@ const App = () => {
       <Routes>
         {/* الصفحة الرئيسية */}
         <Route
-          path="/"
+          path="/#"
           element={
             <>
               <Header />
