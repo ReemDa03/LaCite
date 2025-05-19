@@ -25,3 +25,11 @@ a{
     opacity: 1;
   }
 }
+@media (max-width: 600px) {
+
+ .app{
+  width: 95%;
+  margin: auto;
+} 
+
+}

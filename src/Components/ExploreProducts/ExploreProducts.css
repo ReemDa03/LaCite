@@ -28,6 +28,7 @@
 .explore-products h1 {
   color: #333;
   font-weight: 500;
+  margin-top: 20px;
 }
 
 /* ⭐ صف الباراجراف وزر السهم */
@@ -210,6 +211,30 @@
     
 }
 
+
+@media (max-width: 444px) {
+  .product-card {
+    flex: 1 1 calc(50% - 15px);
+    max-width: none; /* تعطي حرية العرض */
+  }
+  
+  .product-list {
+    justify-content: space-between;
+  }
+
+  .product-list .product-card:only-child {
+    flex: 0 1 200px;
+    margin: 0 auto;
+  }
+
+  .product-list .product-card:last-child:nth-child(odd) {
+  flex: 0 1 200px;
+  margin: 0 auto;
+}
+
+}
+
+
 /* للشاشات المتوسطة (من 601 بكسل إلى 768 بكسل - غالبًا التابلت) */
 @media (min-width: 601px) and (max-width: 768px) {
     
@@ -227,12 +252,12 @@
     }
 
     .product-list {
-        justify-content: center; /* توسيط المنتجات */
+        justify-content:space-between; /* توسيط المنتجات */
     }
 
     .product-card {
-        width: calc(50% - 10px); /* عرض كل كرت منتج ليأخذ نصف المساحة مع هامش */
-    }
+    width: calc(50% - 10px);
+    min-width: 140px;}
 }
 
 /* للشاشات الأكبر من 768 بكسل (الرجوع للتصميم الأصلي أو تعديلات طفيفة) */
